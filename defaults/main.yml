@@ -1,2 +1,1 @@
-custom_repo: ""
 custom_path: "{{ noc_root }}/../noc_custom"

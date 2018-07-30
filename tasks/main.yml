@@ -1,16 +1,1 @@
-- name: Pull NOC custom
-  git:
-    repo: "{{custom_repo}}"
-    dest: "{{custom_path}}"
-    version: "{{custom_version}}"
-    force: yes
-    clone: yes
-  diff: False
-  when:
-    - custom_repo is defined
-    - custom_repo | length > 2
-  environment:
-    https_proxy: "{{http_proxy}}"
-  tags:
-    - get_source
-    - custom
+---

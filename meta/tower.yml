@@ -8,13 +8,6 @@ forms:
       <strong>Scale Recommendations</strong>: None<br/>
       <strong>docs</strong>: <a href=http://docs.getnoc.com/en/latest/hacking/ target=_blank>Hacking Noc</a><br/>
       <strong>Placement constraint</strong>:  Will be placed on each node<br/>
-    repo:
-      label: "Custom repo localtion"
-      type: str
-    version:
-      label: "Custom repo version"
-      type: str
-      default: master
     path:
       label: "Place custom code to"
       type: str
