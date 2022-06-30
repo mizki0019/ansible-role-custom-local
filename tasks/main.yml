@@ -4,5 +4,5 @@
   file:
     path: "{{ custom_path }}"
     state: directory
-    owner: {{ noc_user }}
-    group: {{ noc_group }}
+    owner: "{{ noc_user }}"
+    group: "{{ noc_group }}"
