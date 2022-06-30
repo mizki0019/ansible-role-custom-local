@@ -1,4 +1,4 @@
-- name: Install NOC
+- name: Install NOC custom local
   hosts: svc-noc-exec
   become: yes
   any_errors_fatal: false
