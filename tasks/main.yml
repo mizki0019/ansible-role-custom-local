@@ -6,3 +6,25 @@
     state: directory
     owner: "{{ noc_user }}"
     group: "{{ noc_group }}"
+
+- name: Check if we have own requirements
+  stat:
+    path: "{{ custom_path }}/requirements.txt"
+  register: own_reqs_file
+  tags:
+    - requirements
+    - custom
+
+- name: Install custom requirements
+  pip:
+    chdir: "{{ noc_root }}"
+    requirements: "{{ custom_path }}/requirements.txt"
+    virtualenv: "{{ noc_root }}"
+    extra_args: "--upgrade"
+  environment:
+    http_proxy: "{{ http_proxy }}"
+    https_proxy: "{{ http_proxy }}"
+  when: own_reqs_file.stat.exists
+  tags:
+    - requirements
+    - custom
